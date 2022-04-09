@@ -1,0 +1,53 @@
+Given an unsorted array of size N. Find the first element in array such that all of its left elements are smaller and all right elements to it are greater than it.
+
+Note: Left and right side elements can be equal to required element. And extreme elements cannot be required element.
+
+Example 1:
+
+Input:
+N = 4
+A[] = {4, 2, 5, 7}
+Output:
+5
+Explanation:
+Elements on left of 5 are smaller than 5
+and on right of it are greater than 5.
+ 
+
+Example 2:
+
+Input:
+N = 3
+A[] = {11, 9, 12}
+Output:
+-1
+*****************************************************************************************************************************************************
+
+import java.util.Scanner;
+
+public class leftsideRightside {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i, j, k, sum = 0, n;
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		int a[] = new int[n];
+		for (i = 0; i < n; i++) {
+			a[i] = sc.nextInt();
+		}
+		for(i=1;i<n-1;i++) {
+			if(a[i]<=a[i+1]&&a[i]>=a[i-1]) {
+				System.out.println(a[i]);
+				sum=1;
+			}
+			else {
+				continue;
+			}
+		}
+		if(sum==0)
+			System.out.println("-1");
+
+	}
+
+}
