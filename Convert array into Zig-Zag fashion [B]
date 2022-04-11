@@ -1,0 +1,49 @@
+Given an array Arr (distinct elements) of size N. Rearrange the elements of array in zig-zag fashion. The converted array should be in form a < b > c < d > e < f. The relative order of elements is same in the output i.e you have to iterate on the original array only.
+
+Example 1:
+
+Input:
+N = 7
+Arr[] = {4, 3, 7, 8, 6, 2, 1}
+Output: 3 7 4 8 2 6 1
+Explanation: 3 < 7 > 4 < 8 > 2 < 6 > 1
+
+
+
+import java.util.Scanner;
+
+public class zigzag {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i, j, n, temp = 0, res = 0;
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		int arr[] = new int[n];
+		for (i = 0; i < n; i++) {
+			arr[i] = sc.nextInt();
+
+		}
+		for (i = 0; i < n-1; i++) {
+			if (i % 2 == 0) {
+				if (arr[i] > arr[i + 1]) {
+					temp = arr[i];
+					arr[i] = arr[i + 1];
+					arr[i + 1] = temp;
+
+				}
+			} else if (i % 2 == 1) {
+				if (arr[i] < arr[i + 1]) {
+					temp = arr[i];
+					arr[i] = arr[i + 1];
+					arr[i + 1] = temp;
+
+				}
+			}
+		}
+		for(i=0;i<n;i++) {
+		System.out.println(arr[i]);
+		}
+	}
+
+}
