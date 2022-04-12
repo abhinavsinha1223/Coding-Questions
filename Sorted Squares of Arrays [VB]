@@ -1,0 +1,53 @@
+Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+Input: nums = [-7,-3,2,3,11]
+Output: [4,9,9,49,121]
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class squaresofArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i, j, n,max=0;
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		int a[] = new int[n];
+		for (i = 0; i < n; i++) {
+			a[i] = sc.nextInt();
+
+		}
+		for(i=0;i<n;i++) {
+			a[i]=a[i]*a[i];
+		}
+		Arrays.sort(a);
+
+		for(i=0;i<n;i++) {
+			System.out.println(a[i]);
+		}
+	}
+
+}
+
+//for less time complexity this is optimal solution.
+lass Solution {
+    public int[] sortedSquares(int[] nums) {
+        int l = 0;
+        int r = nums.length-1;
+        int p = nums.length-1;
+        int[] res = new int[nums.length];
+        while(l<=r){
+            if(Math.abs(nums[l])>Math.abs(nums[r])){
+                res[p]=nums[l]*nums[l];
+                l++;
+            }
+            else{
+                res[p]=nums[r]*nums[r];
+                r--;
+            }  
+            p--;
+        }
+        return res;
+    }
+}
