@@ -1,0 +1,28 @@
+import java.util.*;
+public class median {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,z,n;
+		Scanner sc=new Scanner(System.in);
+		n=sc.nextInt();
+		int arr[]=new int[n];
+		for(i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		Arrays.sort(arr);
+		for(i=0;i<n;i++) {
+		  System.out.println(arr[i]);
+		}
+		
+		
+		if(arr.length%2==0) {
+			System.out.println((arr[arr.length/2]+arr[(arr.length/2)-1])/2);
+		}
+		else if(arr.length%2!=0) {
+			System.out.println(arr[(arr.length/2)]);
+		}
+
+	}
+
+}
