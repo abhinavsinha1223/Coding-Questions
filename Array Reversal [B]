@@ -25,3 +25,37 @@ public class arrayReversal {
 	}
 
 }
+
+
+//other method using swap technique
+
+
+import java.util.Scanner;
+
+public class arrayreversal101 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i, temp=0, n;
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+
+		int a[] = new int[n];
+
+		for (i = 0; i < n; i++) {
+			a[i] = sc.nextInt();
+		}
+		
+		for(i=0;i<n/2;i++) {
+			temp=a[i];
+			a[i]=a[n-1-i];
+			a[n-1-i]=temp;
+		}
+		for(i=0;i<n;i++)
+             System.out.println(a[i]);
+	}
+
+}
+
+
+
