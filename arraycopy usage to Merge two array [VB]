@@ -1,0 +1,44 @@
+
+import java.util.*;
+
+public class mergingTwoArrays {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i, n;
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		int arr[] = new int[n];
+		int brr[] = new int[n];
+		int crr[] = new int[n + n];
+		for (i = 0; i < n; i++) {
+			arr[i] = sc.nextInt();
+		}
+		for (i = 0; i < n; i++) {
+			brr[i] = sc.nextInt();
+		}
+		for (i = 0; i < n; i++) {
+			crr[i] = arr[i];
+		}
+		for (i = 0; i < n; i++) {
+
+			crr[n + i] = brr[i];
+		}
+		for (i = 0; i < n + n; i++) {
+			System.out.print(crr[i]+" ");
+		}
+    
+    
+		/*
+		 using the pre-defined function arraycopy 5 arguments of arraycopy takes (
+		 source array, starting point of source arry, destination array, stating point
+		 of destination array, no.of elements to be copied )
+    
+    System.arraycopy(arr, 0, crr, 0, n); 
+		System.arraycopy(brr, 0, crr, a1, n);
+    System.out.println(Arrays.toString(c));
+		 */
+
+	}
+
+}
