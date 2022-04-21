@@ -1,0 +1,17 @@
+class Solution
+{
+    int atoi(String str) {
+	// Your code here
+	try
+    {
+        int ans = Integer.parseInt(str);
+
+        return ans;
+    
+    }
+    catch(Exception e)
+    {
+        return -1;
+    }
+    }
+}
