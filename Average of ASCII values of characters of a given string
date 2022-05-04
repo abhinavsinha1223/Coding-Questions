@@ -1,0 +1,28 @@
+Given a string, the task is to find the average of ASCII values of characters in the string.
+
+Examples:  
+
+Input: str =  "for"
+Output: 109
+'f'= 102, 'o' = 111, 'r' = 114
+(102 + 111 + 114)/3 = 109 
+
+Input: str = "geeks" 
+Output: 105
+
+package strings;
+import java.util.*;
+public class averageOfaString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+String st=sc.next();
+int sum=0,i;
+for(i=0;i<st.length();i++) {
+	sum=sum+st.charAt(i);
+}
+System.out.println(sum/st.length());
+	}
+
+}
